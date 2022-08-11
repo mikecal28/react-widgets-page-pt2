@@ -1,0 +1,40 @@
+html {
+  @include box(100%);
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    @include box(100%);
+    font-family: sans-serif;
+    background-color: lightblue;
+
+    #root {
+      @include box(100%);
+
+      .app {
+        @include box(100%);
+        @include flex(cn);
+
+        .navbar {
+          width: 100%;
+          @include flex(rn, space-around);
+          @include abs-position(0%);
+        }
+
+        .active {
+          color: red;
+        }
+
+        .home {
+          @include box(100%);
+          @include flex(rn);
+        }
+      }
+    }
+  }
+}

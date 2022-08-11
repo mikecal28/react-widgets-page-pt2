@@ -1,0 +1,38 @@
+.motivational-poster {
+  @include box(min-content, 100%);
+  @include flex(cn);
+
+  h1 {
+    @include abs-position(5%);
+  }
+
+  .poster-wrapper {
+    @include rel-position();
+
+    .poster {
+      border-radius: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    }
+
+    .quote {
+      @include abs-position($bottom: 3%);
+      max-width: 100%;
+      @include padding(2rem);
+      color: white;
+      font-weight: 900;
+      font-size: 2rem;
+      text-align: center;
+      text-shadow: 1px 1px 2px black;
+
+      .loading {
+        @include abs-position(-50%, 50%);
+        transform: translate(50%, -50%);
+      }
+    }
+
+    .author {
+      padding-left: 1rem;
+    }
+  }
+}

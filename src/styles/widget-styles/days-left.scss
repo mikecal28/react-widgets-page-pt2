@@ -1,0 +1,33 @@
+.days-left {
+  @include box(100%);
+  @include flex();
+
+  h1 {
+    // @include padding(2.5rem, null, null, null);
+    @include abs-position(5%);
+  }
+
+  .days-wrapper {
+    @include abs-position(10%);
+    @include box(70%, 100%);
+    display: grid;
+    grid-template-columns: repeat(250, auto);
+    grid-template-rows: repeat(500, auto);
+    justify-items: center;
+    align-items: center;
+    @include padding(2rem);
+    // column-gap: 1rem;
+
+    .day-lived {
+      @include box(0.25rem, 0.5rem);
+      background-color: red;
+      border: 1px solid black;
+    }
+
+    .day-to-live {
+      @include box(0.25rem, 0.5rem);
+      background-color: yellow;
+      border: 1px solid black;
+    }
+  }
+}
