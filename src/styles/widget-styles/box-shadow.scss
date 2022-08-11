@@ -1,0 +1,32 @@
+.box-shadow {
+  @include rel-position(2rem);
+  @include box(min-content);
+  @include flex();
+
+  h1 {
+    @include fxd-position(10%);
+    white-space: nowrap;
+  }
+
+  .box-shadow-wrapper {
+    @include box(15rem);
+    @include flex(cn);
+    border-radius: 1rem;
+    background-color: red;
+    color: white;
+    @include margin(null, null, 5rem);
+  }
+
+  label {
+    @include flex();
+    width: 100%;
+    padding-top: 0.25rem;
+    font-weight: 600;
+    font-size: 0.65rem;
+  }
+
+  input {
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+}

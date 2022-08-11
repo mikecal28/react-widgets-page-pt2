@@ -8,13 +8,22 @@ React Widgets Part 2:
 */
 
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import "../styles/main.scss";
 import NavBar from "./navigation/NavBar";
 import MotivationalPoster from "./widgets/MotivationalPoster";
-import DaysLeft from "./widgets/DaysLeft";
+import WeeksLeft from "./widgets/WeeksLeft";
+import BoxShadow from "./widgets/BoxShadow";
 
 function App() {
+  const [image, setImage] = useState("");
+  const [quote, setQuote] = useState("");
+  const [refresh, setRefresh] = useState(true);
+  const [loadedQuote, setLoadedQuote] = useState("");
+
+  // const quoteStorage = localStorage.getItem("quotes");
+
   return (
     <div className="app">
       <Router>
@@ -31,8 +40,24 @@ function App() {
             )}
           />
 
-          <Route path={"/motivational-poster"} component={MotivationalPoster} />
-          <Route path={"/days-left"} component={DaysLeft} />
+          <Route
+            path={"/motivational-poster"}
+            render={(props) => (
+              <MotivationalPoster
+                {...props}
+                image={image}
+                setImage={setImage}
+                quote={quote}
+                setQuote={setQuote}
+                refresh={refresh}
+                setRefresh={setRefresh}
+                loadedQuote={loadedQuote}
+                setLoadedQuote={setLoadedQuote}
+              />
+            )}
+          />
+          <Route path={"/weeks-left"} component={WeeksLeft} />
+          <Route path={"/box-shadow"} component={BoxShadow} />
         </Switch>
       </Router>
     </div>

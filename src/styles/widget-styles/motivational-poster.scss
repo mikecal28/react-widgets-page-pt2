@@ -1,9 +1,11 @@
 .motivational-poster {
-  @include box(min-content, 100%);
+  @include rel-position(3rem);
+  @include box(min-content);
   @include flex(cn);
 
   h1 {
-    @include abs-position(5%);
+    position: fixed;
+    top: 10%;
   }
 
   .poster-wrapper {
@@ -27,12 +29,19 @@
 
       .loading {
         @include abs-position(-50%, 50%);
-        transform: translate(50%, -50%);
+        transform: translate(38%, -50%);
+        white-space: nowrap;
+        z-index: 2;
       }
     }
 
     .author {
       padding-left: 1rem;
     }
+  }
+
+  .refresh {
+    @include button();
+    @include fxd-position(null, null, 2rem);
   }
 }

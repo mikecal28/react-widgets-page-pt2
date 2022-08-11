@@ -1,16 +1,25 @@
 import { useState, useEffect } from "react";
 
-function Widget1() {
-  const [image, setImage] = useState("");
-  const [quote, setQuote] = useState("");
-
-  const quoteStorage = localStorage.getItem("quotes");
+function MotivationalPoster(props) {
+  const {
+    image,
+    setImage,
+    quote,
+    setQuote,
+    refresh,
+    setRefresh,
+    loadedQuote,
+    setLoadedQuote,
+  } = props;
 
   useEffect(() => {
-    fetch("https://picsum.photos/600")
-      .then((res) => res.url)
-      .then((data) => setImage(data));
-  }, []);
+    if (refresh) {
+      fetch("https://picsum.photos/600")
+        .then((res) => res.url)
+        .then((data) => setImage(data));
+      setRefresh(false);
+    }
+  }, [refresh]);
 
   useEffect(() => {
     if (!localStorage?.getItem("quotes")) {
@@ -30,36 +39,40 @@ function Widget1() {
   };
 
   useEffect(() => {
-    if (localStorage?.getItem("quotes")) {
-      const quotes = renderQuote();
-      setQuote(quotes);
+    if (refresh) {
+      if (localStorage?.getItem("quotes")) {
+        const quotes = renderQuote();
+        setLoadedQuote(quotes);
+      }
     }
-  }, [quoteStorage]);
+  }, [refresh]);
 
   useEffect(() => {
-    console.log(quote);
-  }, [quote]);
-
-  useEffect(() => {
-    console.log(image);
+    setQuote(loadedQuote);
   }, [image]);
 
   return (
     <div className="motivational-poster">
-      <h1>Motivational Poster</h1>
+      <h1>Random Motivational Poster</h1>
       <div className="poster-wrapper">
         {image && <img className="poster" src={image} alt="random pic" />}
         <div className="quote">
           {quote && image ? (
             quote.text
           ) : (
-            <div className="loading">Loading...</div>
+            <div className="loading">...Loading</div>
           )}
         </div>
         <p className="author">{quote && image ? quote.author : null}</p>
       </div>
+      <button
+        className="refresh"
+        onClick={() => setRefresh((refresh) => !refresh)}
+      >
+        Refresh
+      </button>
     </div>
   );
 }
 
-export default Widget1;
+export default MotivationalPoster;

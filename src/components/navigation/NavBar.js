@@ -11,19 +11,19 @@ function NavBar() {
 
       <div>
         <NavLink to={"/motivational-poster"} className="navlink">
-          Widget 1
+          Motivational Poster
         </NavLink>
       </div>
 
       <div>
-        <NavLink to={"/days-left"} className="navlink">
-          Widget 2
+        <NavLink to={"/weeks-left"} className="navlink">
+          Weeks Left
         </NavLink>
       </div>
 
       <div>
-        <NavLink to={"/widget-3"} className="navlink">
-          Widget 3
+        <NavLink to={"/box-shadow"} className="navlink">
+          Box Shadow
         </NavLink>
       </div>
 

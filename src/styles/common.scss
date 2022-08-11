@@ -21,9 +21,11 @@ html {
         @include flex(cn);
 
         .navbar {
-          width: 100%;
+          @include box(100%, 4rem);
           @include flex(rn, space-around);
           @include abs-position(0%);
+          background-color: bisque;
+          z-index: 1;
         }
 
         .active {

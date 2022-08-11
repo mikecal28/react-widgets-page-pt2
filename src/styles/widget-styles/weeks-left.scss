@@ -1,0 +1,47 @@
+.weeks-left {
+  @include rel-position(2rem);
+  @include box(min-content);
+  @include flex();
+
+  h1 {
+    @include rel-position(-1%);
+    white-space: nowrap;
+  }
+
+  .weeks-wrapper {
+    @include box(fit-content);
+    display: grid;
+    grid-template-columns: repeat(52, auto);
+    grid-template-rows: repeat(500, auto);
+    justify-items: center;
+    align-items: center;
+    @include padding(null, null, 1rem);
+
+    .week-lived {
+      @include box(0.45rem, 0.45rem);
+      background-color: red;
+      border: 1px solid black;
+    }
+
+    .week-to-live {
+      @include box(0.45rem, 0.45rem);
+      background-color: yellow;
+      border: 1px solid black;
+    }
+  }
+
+  label {
+    @include flex();
+    width: 100%;
+    padding-top: 0.25rem;
+    font-weight: 600;
+    font-size: 0.65rem;
+  }
+
+  input {
+    @include text(true) {
+      width: 10rem;
+      text-align: center;
+    }
+  }
+}
