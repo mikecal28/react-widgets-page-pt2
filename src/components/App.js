@@ -15,6 +15,7 @@ import NavBar from "./navigation/NavBar";
 import MotivationalPoster from "./widgets/MotivationalPoster";
 import WeeksLeft from "./widgets/WeeksLeft";
 import BoxShadow from "./widgets/BoxShadow";
+import Hangman from "./widgets/Hangman";
 
 function App() {
   const [image, setImage] = useState("");
@@ -58,6 +59,7 @@ function App() {
           />
           <Route path={"/weeks-left"} component={WeeksLeft} />
           <Route path={"/box-shadow"} component={BoxShadow} />
+          <Route path={"/hangman"} component={Hangman} />
         </Switch>
       </Router>
     </div>
