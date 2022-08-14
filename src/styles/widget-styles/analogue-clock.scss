@@ -1,0 +1,53 @@
+.analogue-clock {
+  @include rel-position(2rem);
+  @include box(100%);
+  @include flex(cn);
+  background-color: lightblue;
+  @include border();
+
+  h1 {
+    @include fxd-position(10%);
+    white-space: nowrap;
+  }
+
+  .analogue-clock-wrapper {
+    @include box(20rem, 25rem);
+    @include flex(cn);
+    background-color: orange;
+    user-select: none;
+
+    .second-hand {
+    }
+
+    .minute-hand {
+      // @include box(0.35rem, 10rem);
+      // background: linear-gradient(to bottom, black 49%, orange 50%);
+      // transform: rotate3d(0, 0, 1, 180deg);
+      // animation: hour-hand 3600s infinite linear;
+    }
+  }
+}
+
+// @keyframes minute-hand {
+//   0% {
+//     transform: rotate3d(0, 0, 1, 0deg);
+//   }
+//   50% {
+//     transform: rotate3d(0, 0, 1, 180deg);
+//   }
+//   100% {
+//     transform: rotate3d(0, 0, 1, 360deg);
+//   }
+// }
+
+// @keyframes hour-hand {
+//   0% {
+//     transform: rotate3d(0, 0, 1, 0deg);
+//   }
+//   50% {
+//     transform: rotate3d(0, 0, 1, 180deg);
+//   }
+//   100% {
+//     transform: rotate3d(0, 0, 1, 360deg);
+//   }
+// }

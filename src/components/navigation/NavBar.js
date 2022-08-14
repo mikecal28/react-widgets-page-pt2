@@ -34,14 +34,14 @@ function NavBar() {
       </div>
 
       <div>
-        <NavLink to={"widget-5/"} className="navlink">
-          Widget 5
+        <NavLink to={"/message-scroller"} className="navlink">
+          Message Scroller
         </NavLink>
       </div>
 
       <div>
-        <NavLink to={"/widget-6"} className="navlink">
-          Widget 6
+        <NavLink to={"/analogue-clock"} className="navlink">
+          Analogue Clock
         </NavLink>
       </div>
 

@@ -16,14 +16,14 @@ import MotivationalPoster from "./widgets/MotivationalPoster";
 import WeeksLeft from "./widgets/WeeksLeft";
 import BoxShadow from "./widgets/BoxShadow";
 import Hangman from "./widgets/Hangman";
+import MessageScroller from "./widgets/MessageScroller";
+import AnalogueClock from "./widgets/AnalogueClock";
 
 function App() {
   const [image, setImage] = useState("");
   const [quote, setQuote] = useState("");
   const [refresh, setRefresh] = useState(true);
   const [loadedQuote, setLoadedQuote] = useState("");
-
-  // const quoteStorage = localStorage.getItem("quotes");
 
   return (
     <div className="app">
@@ -60,6 +60,8 @@ function App() {
           <Route path={"/weeks-left"} component={WeeksLeft} />
           <Route path={"/box-shadow"} component={BoxShadow} />
           <Route path={"/hangman"} component={Hangman} />
+          <Route path={"/message-scroller"} component={MessageScroller} />
+          <Route path={"/analogue-clock"} component={AnalogueClock} />
         </Switch>
       </Router>
     </div>

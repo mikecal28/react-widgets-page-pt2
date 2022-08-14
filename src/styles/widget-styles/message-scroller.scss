@@ -1,0 +1,51 @@
+.message-scroller {
+  @include rel-position(2rem);
+  @include box(100%, 90%);
+  @include flex();
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  background-color: teal;
+  text-rendering: optimizeLegibility;
+
+  h1 {
+    @include fxd-position(10%);
+    z-index: 1;
+    white-space: nowrap;
+  }
+
+  .message-scroller-cover {
+    @include box(100vw, 50rem);
+    @include fxd-position();
+    @include flex();
+    background-color: lightblue;
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      20% 100%,
+      20% 45%,
+      80% 45%,
+      80% 55%,
+      20% 55%,
+      20% 100%,
+      100% 100%,
+      100% 0%
+    );
+
+    .message-scroller-wrapper {
+      @include fxd-position();
+      @include box(75%, 20rem);
+      background-color: turquoise;
+      border-radius: 2rem;
+      box-shadow: 0 0 7px rgba(0, 0, 0, 1);
+    }
+  }
+
+  textarea {
+    @include fxd-position(53.5vh);
+    @include text(true) {
+      width: 50vw;
+      height: 5rem;
+    }
+    resize: none;
+  }
+}
