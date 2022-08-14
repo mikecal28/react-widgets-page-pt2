@@ -1,5 +1,5 @@
 .analogue-clock {
-  @include rel-position(2rem);
+  @include fxd-position(2rem);
   @include box(100%);
   @include flex(cn);
   background-color: lightblue;
@@ -11,19 +11,30 @@
   }
 
   .analogue-clock-wrapper {
+    @include fxd-position(25vh);
     @include box(20rem, 25rem);
-    @include flex(cn);
-    background-color: orange;
+    background-color: mediumaquamarine;
     user-select: none;
+    border-radius: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-    .second-hand {
+    .clock-face {
+      @include box(15rem);
+      background-color: white;
+      border-radius: 50%;
+      @include border();
+      @include abs-position(18.5%, null, null, 13%);
     }
 
-    .minute-hand {
-      // @include box(0.35rem, 10rem);
-      // background: linear-gradient(to bottom, black 49%, orange 50%);
-      // transform: rotate3d(0, 0, 1, 180deg);
-      // animation: hour-hand 3600s infinite linear;
+    .center-piece {
+      @include box(1rem);
+      border-radius: 50%;
+      position: absolute;
+      top: 46.5%;
+      left: 48%;
+      background-color: black;
     }
   }
 }
