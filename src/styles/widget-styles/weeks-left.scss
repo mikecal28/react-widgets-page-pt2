@@ -1,21 +1,23 @@
 .weeks-left {
-  @include rel-position(2rem);
-  @include box(min-content);
-  @include flex();
+  margin: 10rem 0 0 0;
+  @include box(100%);
+  @include flex(cn);
 
   h1 {
-    @include rel-position(-1%);
+    @include abs-position(-15rem);
+    padding: 20rem 0 5rem 0;
     white-space: nowrap;
   }
 
   .weeks-wrapper {
     @include box(fit-content);
+    @include abs-position(-5rem);
     display: grid;
     grid-template-columns: repeat(52, auto);
     grid-template-rows: repeat(500, auto);
     justify-items: center;
     align-items: center;
-    @include padding(null, null, 1rem);
+    @include padding(20rem, null, 1rem);
 
     .week-lived {
       @include box(0.45rem, 0.45rem);
@@ -31,14 +33,17 @@
   }
 
   label {
+    @include abs-position(13rem, 0rem);
     @include flex();
     width: 100%;
     padding-top: 0.25rem;
     font-weight: 600;
     font-size: 0.65rem;
+    margin-bottom: 10rem;
   }
 
   input {
+    @include abs-position(10rem, 40rem);
     @include text(true) {
       width: 10rem;
       text-align: center;

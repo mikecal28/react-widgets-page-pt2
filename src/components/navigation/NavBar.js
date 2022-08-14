@@ -46,8 +46,8 @@ function NavBar() {
       </div>
 
       <div>
-        <NavLink to={"/widget-7"} className="navlink">
-          Widget 7
+        <NavLink to={"/piano"} className="navlink">
+          Piano
         </NavLink>
       </div>
     </div>

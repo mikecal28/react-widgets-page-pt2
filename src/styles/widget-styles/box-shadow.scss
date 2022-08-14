@@ -4,12 +4,13 @@
   @include flex();
 
   h1 {
-    @include fxd-position(10%);
+    @include fxd-position(calc(10% + 4rem));
     white-space: nowrap;
   }
 
   .box-shadow-wrapper {
     @include box(15rem);
+    @include fxd-position(calc(20% + 4rem));
     @include flex(cn);
     border-radius: 1rem;
     background-color: red;

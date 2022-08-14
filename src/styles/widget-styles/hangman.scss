@@ -1,55 +1,63 @@
 .hangman {
   @include rel-position(2rem);
-  @include box(min-content);
+  @include box(100%);
   @include flex(cn);
-  background-color: white;
-  @include border();
+  background-color: lightblue;
 
   h1 {
     @include fxd-position(10%);
     white-space: nowrap;
   }
 
-  .hangman-wrapper {
-    @include box(20rem, 25rem);
+  .hangman-container {
+    @include rel-position(2rem);
+    @include box(fit-content);
     @include flex(cn);
     background-color: white;
-    user-select: none;
-  }
+    margin-bottom: 2rem;
 
-  button {
-    @include button(true, lightcyan) {
-      width: 12rem;
-      height: 3rem;
-      font-size: 2rem;
-    }
-    @include rel-position(-3rem);
-  }
-
-  .guess {
-    @include text(true) {
-      width: 3.5rem;
-      height: 3rem;
-      font-size: 1.75rem;
-      text-align: center;
-      @include rel-position(-4rem);
+    .hangman-wrapper {
+      @include box(100%);
+      @include flex(cn);
+      background-color: white;
+      user-select: none;
     }
 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  }
+    button {
+      @include button(true, lightcyan) {
+        width: 12rem;
+        height: 3rem;
+        font-size: 2rem;
+      }
+      @include rel-position(-3rem);
+    }
 
-  .correct-guesses {
-    @include box(100%, 5rem);
-    @include flex(rn);
-    column-gap: 1rem;
+    .guess {
+      @include text(true) {
+        width: 3.5rem;
+        height: 3rem;
+        font-size: 1.75rem;
+        text-align: center;
+        @include rel-position(-4rem);
+      }
 
-    .chars {
-      @include box(3rem, 3rem);
-      text-align: center;
-      font-size: 2rem;
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid black;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+        rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    .correct-guesses {
+      @include box(100%, 5rem);
+      @include flex(rn);
+      column-gap: 1rem;
+
+      .chars {
+        @include box(3rem, 3rem);
+        text-align: center;
+        font-size: 2rem;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid black;
+      }
     }
   }
 }

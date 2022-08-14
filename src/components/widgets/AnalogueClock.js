@@ -83,7 +83,7 @@ function AnalogueClock() {
     background: linear-gradient(to bottom, red 49%, transparent 50%);
     animation: ${hoursAnimation} linear infinite;
     position: absolute;
-    top: 28%;
+    top: 28.5%;
     left: 49.5%;
   `;
 

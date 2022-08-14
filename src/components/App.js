@@ -18,6 +18,7 @@ import BoxShadow from "./widgets/BoxShadow";
 import Hangman from "./widgets/Hangman";
 import MessageScroller from "./widgets/MessageScroller";
 import AnalogueClock from "./widgets/AnalogueClock";
+import Piano from "./widgets/Piano";
 
 function App() {
   const [image, setImage] = useState("");
@@ -62,6 +63,7 @@ function App() {
           <Route path={"/hangman"} component={Hangman} />
           <Route path={"/message-scroller"} component={MessageScroller} />
           <Route path={"/analogue-clock"} component={AnalogueClock} />
+          <Route path={"/piano"} component={Piano} />
         </Switch>
       </Router>
     </div>

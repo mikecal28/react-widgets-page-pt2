@@ -1,15 +1,16 @@
 .motivational-poster {
-  @include rel-position(3rem);
-  @include box(min-content);
+  @include rel-position(10rem);
+  @include box(100%);
   @include flex(cn);
+  padding-bottom: 20rem;
 
   h1 {
-    position: fixed;
-    top: 10%;
+    position: relative;
+    top: 30%;
   }
 
   .poster-wrapper {
-    @include rel-position();
+    @include rel-position(10rem);
 
     .poster {
       border-radius: 1rem;
@@ -43,6 +44,7 @@
 
   .refresh {
     @include button();
-    @include fxd-position(null, null, 2rem);
+    @include rel-position(null, null, -12rem);
+    margin-bottom: 5rem;
   }
 }

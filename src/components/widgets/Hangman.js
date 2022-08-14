@@ -3033,20 +3033,22 @@ function Hangman() {
   return (
     <div className="hangman">
       <h1>Hangman</h1>
-      <div className="hangman-wrapper">
-        <img src={`./assets/tile00${score}.png`} />
+      <div className="hangman-container">
+        <div className="hangman-wrapper">
+          <img src={`./assets/tile00${score}.png`} />
+        </div>
+        <input
+          onChange={(e) => setGuess(e.target.value)}
+          className="guess"
+          type="text"
+          placeholder="?"
+          maxLength="1"
+          value={guess}
+        />
+        <button onClick={handleSubmit}>Submit</button>
+        <div className="correct-guesses">{renderInputs()}</div>
+        {score === 6 && <h2>{gameWord}</h2>}
       </div>
-      <input
-        onChange={(e) => setGuess(e.target.value)}
-        className="guess"
-        type="text"
-        placeholder="?"
-        maxLength="1"
-        value={guess}
-      />
-      <button onClick={handleSubmit}>Submit</button>
-      <div className="correct-guesses">{renderInputs()}</div>
-      {score === 6 && <h2>{gameWord}</h2>}
     </div>
   );
 }
