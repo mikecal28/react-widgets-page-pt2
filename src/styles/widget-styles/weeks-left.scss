@@ -43,7 +43,8 @@
   }
 
   input {
-    @include abs-position(10rem, 40rem);
+    @include abs-position(10rem, 50%);
+    transform: translateX(50%);
     @include text(true) {
       width: 10rem;
       text-align: center;
